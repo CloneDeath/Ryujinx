@@ -249,5 +249,18 @@ namespace Ryujinx.Graphics.Gpu.Image
         {
             return Unsafe.As<TextureDescriptor, Vector256<byte>>(ref this).Equals(Unsafe.As<TextureDescriptor, Vector256<byte>>(ref other));
         }
+
+        public override string ToString()
+        {
+            var format = UnpackFormat();
+            var srgb = UnpackSrgb();
+            
+            var formatDetails = string.Empty;
+            if (FormatTable.TryGetTextureFormat(format, srgb, out FormatInfo formatInfo))
+            {
+                formatDetails = $"({formatInfo.Format})";
+            }
+            return $"Size: {UnpackWidth()}x{UnpackHeight()}x{UnpackDepth()}, Target: {UnpackTextureTarget()}, Format: 0x{UnpackFormat():X}{formatDetails}";
+        }
     }
 }
