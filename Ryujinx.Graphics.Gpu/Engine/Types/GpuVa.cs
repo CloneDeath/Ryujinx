@@ -18,5 +18,7 @@
         {
             return Low | ((ulong)High << 32);
         }
+
+        public override string ToString() => $"0x{Pack():X}";
     }
 }

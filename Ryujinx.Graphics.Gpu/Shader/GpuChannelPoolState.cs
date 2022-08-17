@@ -3,7 +3,7 @@ namespace Ryujinx.Graphics.Gpu.Shader
     /// <summary>
     /// State used by the <see cref="GpuAccessor"/>.
     /// </summary>
-    struct GpuChannelPoolState
+    readonly struct GpuChannelPoolState
     {
         /// <summary>
         /// GPU virtual address of the texture pool.
@@ -32,5 +32,7 @@ namespace Ryujinx.Graphics.Gpu.Shader
             TexturePoolMaximumId = texturePoolMaximumId;
             TextureBufferIndex = textureBufferIndex;
         }
+
+        public override string ToString() => $"0x{TexturePoolGpuVa:X} {TextureBufferIndex} (0x{TexturePoolMaximumId})";
     }
 }

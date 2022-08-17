@@ -258,14 +258,14 @@ namespace Ryujinx.Graphics.Gpu.Image
             var formatDetails = string.Empty;
             if (FormatTable.TryGetTextureFormat(format, srgb, out FormatInfo formatInfo))
             {
-                formatDetails = $"({formatInfo.Format})";
+                formatDetails = $"<{formatInfo.Format}>";
             }
 
-            return string.Join(", ", 
-                $"Size: {UnpackWidth()}x{UnpackHeight()}x{UnpackDepth()}", 
-                $"Target: {UnpackTextureTarget()}", 
-                $"Format: 0x{UnpackFormat():X}{formatDetails}", 
-                $"GpuAddress: 0x{UnpackAddress():X}"
+            return string.Join(" ", 
+                $"{UnpackWidth()}x{UnpackHeight()}x{UnpackDepth()}", 
+                $"{UnpackTextureTarget()}", 
+                $"0x{UnpackFormat():X}{formatDetails}", 
+                $"GpuAddress=0x{UnpackAddress():X}"
             );
         }
     }

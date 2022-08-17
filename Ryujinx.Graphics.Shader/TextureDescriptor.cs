@@ -31,6 +31,6 @@ namespace Ryujinx.Graphics.Shader
             return this;
         }
 
-        public override string ToString() => $"{Type} <{Format}> Binding={Binding} Handle={HandleIndex}";
+        public override string ToString() => $"{Type} <{Format}> Binding={Binding} Handle={HandleIndex} CbufSlot={CbufSlot}";
     }
 }

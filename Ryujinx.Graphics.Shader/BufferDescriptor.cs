@@ -22,5 +22,7 @@ namespace Ryujinx.Graphics.Shader
 
             return this;
         }
+
+        public override string ToString() => $"Slot={Slot} Binding={Binding}";
     }
 }

@@ -116,6 +116,6 @@ namespace Ryujinx.Graphics.Texture
             }
         }
 
-        public override string ToString() => $"TotalSize: {TotalSize}";
+        public override string ToString() => $"TotalSize=0x{TotalSize:X}({TotalSize})";
     }
 }

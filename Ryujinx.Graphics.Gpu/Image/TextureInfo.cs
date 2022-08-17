@@ -295,11 +295,11 @@ namespace Ryujinx.Graphics.Gpu.Image
 
         public override string ToString()
         {
-            return string.Join(", ", 
-                $"Size: {Width}x{Height}x{DepthOrLayers}", 
-                $"Target: {Target}", 
-                $"Format: {FormatInfo}", 
-                $"GpuAddress: 0x{GpuAddress:X}"
+            return string.Join(" ", 
+                $"{Width}x{Height}x{DepthOrLayers}", 
+                $"{Target}", 
+                $"<{FormatInfo}>", 
+                $"GpuAddress=0x{GpuAddress:X}"
             );
         }
     }

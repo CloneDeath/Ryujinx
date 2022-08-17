@@ -5,7 +5,7 @@ namespace Ryujinx.Graphics.Gpu.Memory
     /// <summary>
     /// Memory range used for buffers.
     /// </summary>
-    struct BufferBounds
+    readonly struct BufferBounds
     {
         /// <summary>
         /// Region virtual address.
@@ -35,6 +35,6 @@ namespace Ryujinx.Graphics.Gpu.Memory
             Flags = flags;
         }
 
-        public override string ToString() => $"Address={Address} Size={Size}";
+        public override string ToString() => $"Address=0x{Address:X} Size=0x{Size:X}({Size})";
     }
 }

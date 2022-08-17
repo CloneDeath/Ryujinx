@@ -75,6 +75,6 @@ namespace Ryujinx.Memory.Range
             return HashCode.Combine(Address, Size);
         }
 
-        public override string ToString() => $"Address: 0x{Address:X}, Size: {Size}";
+        public override string ToString() => $"Address=0x{Address:X} Size=0x{Size:X}({Size})";
     }
 }

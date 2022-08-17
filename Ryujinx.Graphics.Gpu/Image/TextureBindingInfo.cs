@@ -7,7 +7,7 @@ namespace Ryujinx.Graphics.Gpu.Image
     /// Texture binding information.
     /// This is used for textures that needs to be accessed from shaders.
     /// </summary>
-    struct TextureBindingInfo
+    readonly struct TextureBindingInfo
     {
         /// <summary>
         /// Shader sampler target type.
@@ -70,6 +70,6 @@ namespace Ryujinx.Graphics.Gpu.Image
         {
         }
 
-        public override string ToString() => $"{Target} <{Format}> Binding={Binding} Handle={Handle}";
+        public override string ToString() => $"{Target} <{Format}> Binding={Binding} Handle={Handle} CbufSlot={CbufSlot}";
     }
 }

@@ -208,5 +208,7 @@ namespace Ryujinx.Graphics.Gpu.Image
             }
             _memoryTracking.Dispose();
         }
+
+        public override string ToString() => $"Address=0x{Address:X} Size=0x{Size:X}({Size})";
     }
 }

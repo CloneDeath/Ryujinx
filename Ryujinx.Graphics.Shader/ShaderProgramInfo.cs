@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace Ryujinx.Graphics.Shader
 {
@@ -37,6 +39,16 @@ namespace Ryujinx.Graphics.Shader
             UsesRtLayer = usesRtLayer;
             ClipDistancesWritten = clipDistancesWritten;
             FragmentOutputMap = fragmentOutputMap;
+        }
+
+        public override string ToString()
+        {
+            List<string> results = new() {$"Stage={Stage}"};
+            if (CBuffers.Any()) results.Add($"{nameof(CBuffers)}=[{string.Join(", ", CBuffers)}]");
+            if (SBuffers.Any()) results.Add($"{nameof(SBuffers)}=[{string.Join(", ", SBuffers)}]");
+            if (Textures.Any()) results.Add($"{nameof(Textures)}=[{string.Join(", ", Textures)}]");
+            if (Images.Any()) results.Add($"{nameof(Images)}=[{string.Join(", ", Images)}]");
+            return string.Join(" ", results);
         }
     }
 }
