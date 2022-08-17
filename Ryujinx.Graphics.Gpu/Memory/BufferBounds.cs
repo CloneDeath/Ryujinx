@@ -34,5 +34,7 @@ namespace Ryujinx.Graphics.Gpu.Memory
             Size = size;
             Flags = flags;
         }
+
+        public override string ToString() => $"Address={Address} Size={Size}";
     }
 }

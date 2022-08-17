@@ -69,5 +69,7 @@ namespace Ryujinx.Graphics.Gpu.Image
         public TextureBindingInfo(Target target, int binding, int cbufSlot, int handle, TextureUsageFlags flags) : this(target, (Format)0, binding, cbufSlot, handle, flags)
         {
         }
+
+        public override string ToString() => $"{Target} <{Format}> Binding={Binding} Handle={Handle}";
     }
 }
