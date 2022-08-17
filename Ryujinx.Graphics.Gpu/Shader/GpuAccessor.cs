@@ -267,7 +267,10 @@ namespace Ryujinx.Graphics.Gpu.Shader
         /// <inheritdoc/>
         public void RegisterTexture(int handle, int cbufSlot)
         {
-            _state.SpecializationState?.RegisterTexture(_stageIndex, handle, cbufSlot, GetTextureDescriptor(handle, cbufSlot));
+            var textureDescriptor = GetTextureDescriptor(handle, cbufSlot);
+            // TODO CloneDeath - Remove
+            Console.WriteLine($"Registering Texture. Stage Index: {_stageIndex}, Handle: {handle}, cbufSlot: {cbufSlot}, textureDescriptor: {textureDescriptor}");
+            _state.SpecializationState?.RegisterTexture(_stageIndex, handle, cbufSlot, textureDescriptor);
         }
     }
 }

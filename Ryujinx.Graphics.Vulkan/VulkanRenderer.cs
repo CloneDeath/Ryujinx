@@ -333,6 +333,8 @@ namespace Ryujinx.Graphics.Vulkan
 
         public ITexture CreateTexture(TextureCreateInfo info, float scale)
         {
+            // TODO CloneDeath - Remove
+            Console.WriteLine($"Vulkan Create Texture: {info}");
             if (info.Target == Target.TextureBuffer)
             {
                 return new TextureBuffer(this, info, scale);

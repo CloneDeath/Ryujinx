@@ -667,6 +667,8 @@ namespace Ryujinx.Graphics.Gpu.Image
                 // Step 1: Find textures that are view compatible with the new texture.
                 // Any textures that are incompatible will contain garbage data, so they should be removed where possible.
 
+                // TODO CloneDeath - Remove
+                Console.WriteLine($"Alloc Tex: {texture}, Info: {info}");
                 int viewCompatible = 0;
                 fullyCompatible = 0;
                 bool setData = isSamplerTexture || overlapsCount == 0 || flags.HasFlag(TextureSearchFlags.ForCopy);

@@ -1224,6 +1224,8 @@ namespace Ryujinx.Graphics.Gpu.Engine.Threed
 
         private void UpdateStageBindings(int stage, ShaderProgramInfo info)
         {
+            // TODO CloneDeath - Remove
+            Console.WriteLine($"Updating Bindings for stage {stage}: {info}");
             _currentProgramInfo[stage] = info;
 
             if (info == null)

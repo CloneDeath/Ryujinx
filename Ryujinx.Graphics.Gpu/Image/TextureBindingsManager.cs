@@ -504,6 +504,8 @@ namespace Ryujinx.Graphics.Gpu.Image
                 TextureBindingInfo bindingInfo = _textureBindings[stageIndex][index];
                 TextureUsageFlags usageFlags = bindingInfo.Flags;
 
+                // TODO CloneDeath - Remove
+                Console.WriteLine($"Committing Texture Binding. Stage: {stageIndex}({stage}), Texture Index: {index}/{textureCount}, BindingInfo: {bindingInfo}");
                 (int textureBufferIndex, int samplerBufferIndex) = TextureHandle.UnpackSlots(bindingInfo.CbufSlot, _textureBufferIndex);
 
                 UpdateCachedBuffer(stageIndex, ref cachedTextureBufferIndex, ref cachedSamplerBufferIndex, ref cachedTextureBuffer, ref cachedSamplerBuffer, textureBufferIndex, samplerBufferIndex);
