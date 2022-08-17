@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ryujinx.Graphics.Texture
 {
-    public struct SizeInfo
+    public readonly struct SizeInfo
     {
         private readonly int[] _mipOffsets;
 
@@ -115,5 +115,7 @@ namespace Ryujinx.Graphics.Texture
                 }
             }
         }
+
+        public override string ToString() => $"TotalSize: {TotalSize}";
     }
 }

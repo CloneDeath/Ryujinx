@@ -260,7 +260,13 @@ namespace Ryujinx.Graphics.Gpu.Image
             {
                 formatDetails = $"({formatInfo.Format})";
             }
-            return $"Size: {UnpackWidth()}x{UnpackHeight()}x{UnpackDepth()}, Target: {UnpackTextureTarget()}, Format: 0x{UnpackFormat():X}{formatDetails}";
+
+            return string.Join(", ", 
+                $"Size: {UnpackWidth()}x{UnpackHeight()}x{UnpackDepth()}", 
+                $"Target: {UnpackTextureTarget()}", 
+                $"Format: 0x{UnpackFormat():X}{formatDetails}", 
+                $"GpuAddress: 0x{UnpackAddress():X}"
+            );
         }
     }
 }

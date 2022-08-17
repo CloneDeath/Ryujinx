@@ -3,7 +3,7 @@ using System;
 
 namespace Ryujinx.Graphics.Texture
 {
-    public struct Size
+    public readonly struct Size
     {
         public int Width  { get; }
         public int Height { get; }
@@ -15,5 +15,7 @@ namespace Ryujinx.Graphics.Texture
             Height = height;
             Depth  = depth;
         }
+
+        public override string ToString() => $"{Width}x{Height}x{Depth}";
     }
 }

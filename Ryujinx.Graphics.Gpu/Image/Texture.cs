@@ -1623,5 +1623,15 @@ namespace Ryujinx.Graphics.Gpu.Image
                 Group.Dispose();
             }
         }
+
+        public override string ToString()
+        {
+            return string.Join(", ", 
+                $"Size: {Width}x{Height}", 
+                $"Target: {Target}", 
+                $"Format: {Format}", 
+                $"GpuAddress: 0x{Info.GpuAddress:X}"
+            );
+        }
     }
 }

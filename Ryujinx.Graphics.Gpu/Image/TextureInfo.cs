@@ -6,7 +6,7 @@ namespace Ryujinx.Graphics.Gpu.Image
     /// <summary>
     /// Texture information.
     /// </summary>
-    struct TextureInfo
+    readonly struct TextureInfo
     {
         /// <summary>
         /// Address of the texture in GPU mapped memory.
@@ -291,6 +291,16 @@ namespace Ryujinx.Graphics.Gpu.Image
                     GobBlocksInTileX,
                     layerSize);
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Join(", ", 
+                $"Size: {Width}x{Height}x{DepthOrLayers}", 
+                $"Target: {Target}", 
+                $"Format: {FormatInfo}", 
+                $"GpuAddress: 0x{GpuAddress:X}"
+            );
         }
     }
 }

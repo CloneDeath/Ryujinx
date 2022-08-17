@@ -5,7 +5,7 @@ namespace Ryujinx.Graphics.Gpu.Image
     /// <summary>
     /// Represents texture format information.
     /// </summary>
-    struct FormatInfo
+    readonly struct FormatInfo
     {
         /// <summary>
         /// A default, generic RGBA8 texture format.
@@ -55,6 +55,7 @@ namespace Ryujinx.Graphics.Gpu.Image
         /// <param name="blockWidth">The block width for compressed formats. Must be 1 for non-compressed formats</param>
         /// <param name="blockHeight">The block height for compressed formats. Must be 1 for non-compressed formats</param>
         /// <param name="bytesPerPixel">The number of bytes occupied by a single pixel in memory of the texture data</param>
+        /// <param name="components">The maximum number of components this format has defined (in RGBA order).</param>
         public FormatInfo(
             Format format,
             int    blockWidth,
@@ -68,5 +69,7 @@ namespace Ryujinx.Graphics.Gpu.Image
             BytesPerPixel = bytesPerPixel;
             Components    = components;
         }
+
+        public override string ToString() => $"{Format}";
     }
 }
