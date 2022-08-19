@@ -50,6 +50,8 @@ namespace Ryujinx.Graphics.Gpu.Image
             public int InvalidatedSequence;
             public Texture CachedTexture;
             public Sampler CachedSampler;
+
+            public override string ToString() => $"Handle={TextureHandle} CachedTexture={{{CachedTexture}}}";
         }
 
         private TextureState[] _textureState;
